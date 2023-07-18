@@ -169,6 +169,11 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        & section:nth-child(1) {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
         &--reaction {
             background: var(--light-red-transparent);
