@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+* {
+    padding-block: 0;
+    padding-inline: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    box-sizing: border-box;
+    border-block: 0;
+    border-inline: 0;
+}
+
+:root {
+    /* colors */
+    /* primary */
+    --light-red: hsl(0, 100%, 67%);
+    --light-red-transparent: linear-gradient(0deg, hsla(0, 0%, 100%, 95%) 0%, hsla(0, 0%, 100%, 95%) 100%), linear-gradient(0deg, var(--light-red) 0%, var(--light-red) 100%);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --orangey-yellow-transparent: linear-gradient(0deg, hsla(0, 0%, 100%, 95%) 0%, hsla(0, 0%, 100%, 95%) 100%), linear-gradient(0deg, var(--orangey-yellow) 0%, var(--orangey-yellow) 100%);
+    --green-teal: hsl(166, 100%, 37%);
+    --green-teal-transparent: linear-gradient(0deg, hsla(0, 0%, 100%, 95%) 0%, hsla(0, 0%, 100%, 95%) 100%), linear-gradient(0deg, var(--green-teal) 0%, var(--green-teal) 100%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --cobalt-blue-transparent: linear-gradient(0deg, hsla(0, 0%, 100%, 95%) 0%, hsla(0, 0%, 100%, 95%) 100%), linear-gradient(0deg, var(--cobalt-blue) 0%, var(--cobalt-blue) 100%);
+
+    /* gradient */
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --light-royal-blue: hsl(241, 81%, 54%);
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+    --gradient: linear-gradient(var(--Light-slate-blue), var(--light-royal-blue));
+    --gradient-circle: linear-gradient(var(--violet-blue), var(--persian-blue));
+    /* neutral */
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsla(223, 30%, 27%, 1);
+    --dark-gray-blue-transparent: hsla(223, 30%, 27%, .5);
+
+
+    /* font */
+    --font-family: 'Hanken Grotesk', sans-serif;
+    --heading-xl: 800 4.5rem/4.5rem var(--font-family);
+    --heading-l: 700 2rem/normal var(--font-family);
+    --heading-m: 700 1.5rem/normal var(--font-family);
+    --body-bold: 700 1.125rem/normal var(--font-family);
+    --body-regular: 500 1.125rem/normal var(--font-family);
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-color: var(--pale-blue);
+    color: var(--dark-gray-blue);
+    font: var(--body-regular);
+}
+
+@media (min-width: 600px) {
+    .site-main {
+        display: grid;
+        place-items: center;
+    }
+}
+
+.result-card {
+    inline-size: min(100%, 737px);
+    border-end-start-radius: 32px;
+    border-end-end-radius: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background-color: var(--white);
+
+    @media (min-width: 600px) {
+        border-start-start-radius: 32px;
+        border-start-end-radius: 32px;
+    }
+
+    &__title {
+        font: var(--heading-m);
+        padding-block-end: 24px;
+
+        &--light-blue {
+            padding-block-end: 35px;
+            color: var(--light-lavender);
+        }
+    }
+
+    &__result {
+        padding-block: 38px 40px;
+        padding-inline: 58px;
+        border-end-start-radius: 32px;
+        border-end-end-radius: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--gradient);
+
+        & p:last-child {
+            text-align: center;
+            color: var(--light-lavender);
+        }
+
+        @media (min-width: 600px) {
+            border-start-start-radius: 32px;
+            border-start-end-radius: 32px;
+        }
+
+        &--light-blue {
+            color: var(--pale-blue);
+        }
+    }
+
+    &__total-container {
+        inline-size: 200px;
+        aspect-ratio: 1/1;
+        border-start-start-radius: 50%;
+        border-start-end-radius: 50%;
+        border-end-start-radius: 50%;
+        border-end-end-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        place-items: center;
+        background: var(--gradient-circle);
+
+        & p:last-child {
+            opacity: 0.5168108344078064;
+        }
+    }
+
+    &__total {
+        font: var(--heading-xl);
+        color: var(--white);
+    }
+
+    &__message {
+        padding-block-start: 28px;
+        font: var(--heading-l);
+        color: var(--white);
+    }
+
+    &__result-summary {
+        min-block-size: 100%;
+        padding-inline: 30px;
+        padding-block: 38px 30px;
+    }
+
+    &__scores {
+        padding-block-end: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__score {
+        inline-size: 100%;
+        block-size: 56px;
+        padding-inline: 16px;
+        border-start-start-radius: 12px;
+        border-start-end-radius: 12px;
+        border-end-start-radius: 12px;
+        border-end-end-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--reaction {
+            background: var(--light-red-transparent);
+
+            &:nth-child(1) {
+                color: var(--light-red);
+            }
+        }
+
+        &--memory {
+            background: var(--orangey-yellow-transparent);
+
+            &:nth-child(2) {
+                color: var(--orangey-yellow);
+            }
+        }
+
+        &--verbal {
+            background: var(--green-teal-transparent);
+
+            &:nth-child(3) {
+                color: var(--green-teal);
+            }
+        }
+
+        &--visual {
+            background: var(--cobalt-blue-transparent);
+
+            &:nth-child(4) {
+                color: var(--cobalt-blue);
+            }
+        }
+
+        &--score {
+            font: var(--body-bold);
+            color: var(--dark-gray-blue-transparent);
+
+            & span:nth-child(1) {
+                color: var(--dark-gray-blue);
+            }
+        }
+    }
+
+    &__btn {
+        inline-size: 100%;
+        block-size: 56px;
+        border-start-start-radius: 128px;
+        border-start-end-radius: 128px;
+        border-end-start-radius: 128px;
+        border-end-end-radius: 128px;
+        font: var(--body-bold);
+        background: var(--dark-gray-blue);
+        color: var(--white);
+
+        &:hover {
+            background: var(--gradient);
+        }
+    }
+}
+
+.attribution {
+    block-size: 64px;
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    text-align: center;
+
+    &__link {
+        color: hsl(228, 45%, 44%);
+    }
+}
