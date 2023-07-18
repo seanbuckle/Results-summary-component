@@ -5,7 +5,6 @@ window.addEventListener('load', function() {
         return response.json();
     })
     .then((data) => {
-        console.log(data);
         const rImg = data[0].icon;
         const mImg = data[1].icon;
         const vImg = data[2].icon;
